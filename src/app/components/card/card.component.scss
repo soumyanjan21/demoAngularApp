@@ -1,0 +1,25 @@
+.icons {
+    height: 4.5rem;
+    width: 4.5rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+
+.tittle {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card {
+    border: 1px solid transparent;
+    padding: 1rem;
+    border-radius: 5px;
+    background-image: linear-gradient(to left, #d9b900ed , #c0a403ed); 
+    h3 {
+        font-weight: 500;
+    }
+
+    .price {
+        font-weight: 500;
+    }
+}

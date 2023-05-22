@@ -1,0 +1,41 @@
+.recharge-conatiner {
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(1px);
+}
+
+.recharge-box {
+    height: 14rem;
+    width: fit-content;
+    background-color: white;
+    border-radius: 4px;
+    background-image: linear-gradient(to left, #b99e00ed , #5c4e00ed);
+}
+
+.recharge-button {
+    background-image: linear-gradient(to left, #8b7700ed , #292300ed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.recharge-button:hover {
+    background-image: linear-gradient(to left, #695a00ed , #1b1700ed);
+}
+
+.cross {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
