@@ -1,0 +1,55 @@
+<div class="content flex flex-col pb-8">
+  <h1 class="heading">Welcome to SatTV</h1>
+  <div class="flex gap-4 justify-start mt-4 flex-col">
+    <div class="inline-flex justify-start items-center gap-4">
+      <app-balance
+        class="ml-12"
+        [balance]="currentBalance | async"
+      ></app-balance>
+      <button class="recharge-button" (click)="showRechargeMOdal = true">
+        Recharge
+      </button>
+      <app-subscription
+        (openModal)="showSubscribeModal = true"
+      ></app-subscription>
+      <button class="recharge-button" (click)="showAddModal = true">
+        Add Channels
+      </button>
+    </div>
+    <div class="flex flex-row w-full">
+      <div class="flex flex-col justify-start ml-12 gap-2 w-2/3">
+        <app-card
+          [infoObject]="basePacks$ | async"
+          [tittle]="'Base Packs'"
+        ></app-card>
+        <app-card
+          [infoObject]="channels$ | async"
+          [tittle]="'Channels'"
+        ></app-card>
+        <app-card
+          [infoObject]="services$ | async"
+          [tittle]="'Services'"
+        ></app-card>
+      </div>
+      <app-current-subscription
+        [currentSubscription]="currentSubscription | async"
+        class="mt-6"
+      ></app-current-subscription>
+    </div>
+  </div>
+  <app-recharge
+    *ngIf="showRechargeMOdal"
+    (rechargeEvent)="showRechargeMOdal = false"
+  ></app-recharge>
+  <app-subscription-form
+    *ngIf="showSubscribeModal"
+    (closeModal)="showSubscribeModal = false"
+  ></app-subscription-form>
+  <app-add-channel
+    *ngIf="showAddModal && channels$ && services$"
+    [channels]="channels$ | async"
+    [services]="services$ | async"
+    [subscriptionDetails]="currentSubscription | async"
+    (closeModal)="showAddModal = false"
+  ></app-add-channel>
+</div>
